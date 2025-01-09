@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>left-sidebar</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        body {
+            background-color: #f5deb3;
+            font-family: Arial, sans-serif;
+        }
+
+        .section {
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: all 0.8s ease-out;
+        }
+
+        .section.alt {
+            flex-direction: row-reverse;
+            transform: translateX(100%);
+        }
+
+        .section img {
+            max-width: 45%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .section .text {
+            margin-left: 20px;
+            margin-right: 20px;
+            text-align: left;
+        }
+
+        .section.alt .text {
+            text-align: right;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+</head>
+<body class="left-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header">
+
+			<!-- Inner -->
+			<div class="inner">
+				<header>
+					<h1><a style="color: black;"href="index.html" id="logo"><br></a></h1>
+				</header>
+			</div>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a style="color: black;"href="index.html">首頁</a></li>
+					<li>
+						<a style="color: black;"href="#">商品</a>
+						<ul>
+							<li><a style="color: black;"href="Pie crust.html">泡芙派皮</a></li>
+							<li><a style="color: black;"href="limit.html">期間限定</a></li>
+							<li>
+								<a style="color: black;"href="#">推出口味 &hellip;</a>
+								<ul>
+									<li><a style="color: black;"href="commodity.html">原味</a></li>
+									<li><a style="color: black;"href="commodity.html">草莓</a></li>
+									<li><a style="color: black;"href="commodity.html">巧克力</a></li>
+									<li><a style="color: black;"href="commodity.html">抹茶歐雷</a></li>
+									<li><a style="color: black;"href="commodity.html">皇家奶茶</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+					<li><a style="color: black;"href="left-sidebar.html">關於</a></li>
+					<li><a style="color: black;"href="right-sidebar.html">問題</a></li>
+					<li><a style="color: black;"href="no-sidebar.html">聯絡</a></li>
+				</ul>
+			</nav>
+
+		</div>
+    <header style="text-align: center; padding: 20px;">
+        <h1></h1>
+        <p>探索我們泡芙的美味祕密</p>
+    </header>
+
+    <div class="section">
+        <img src="images/pic15.png" alt="鬆脆雙層派皮">
+        <div class="text">
+            <h2> 鬆脆雙層派皮的秘密</h2>
+            <p>我們的派皮採用獨特技術，外層酥脆，內層柔軟，帶來完美口感。</p>
+        </div>
+    </div>
+
+    <div class="section alt">
+        <img src="images/pic16.png" alt="獨家卡士達醬">
+        <div class="text">
+            <h2> 獨家卡士達醬的魅力</h2>
+            <p>濃郁滑順的卡士達醬，嚴選頂級食材，讓每口都充滿幸福滋味。</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="images/pic17.png" alt="天然香草籽">
+        <div class="text">
+            <h2>天然香草籽的風味</h2>
+            <p>真實香草籽添加，帶出自然的濃郁香氣，讓人回味無窮。</p>
+        </div>
+    </div>
+
+    <div class="section alt">
+        <img src="images/pic18.png" alt="現點現做">
+        <div class="text">
+            <h2> 堅持現點現做的實力</h2>
+            <p>每一顆泡芙都堅持現場製作，確保最佳口感與新鮮。</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="images/pic19.png" alt="品嘗建議">
+        <div class="text">
+            <h2> 品嘗新鮮美味的建議</h2>
+            <p>建議您冷藏後品嘗，搭配一杯咖啡或茶，享受絕妙時光。</p>
+        </div>
+    </div>
+
+    <script>
+        // 動態效果腳本
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+	
+           
+			<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+					</div>
+					<hr />
+					<div class="row">
+						<div class="col-12">
+
+							<!-- Contact -->
+								<section class="contact">
+									<header>
+										<h3>營業時間與聯絡方式</h3>
+									</header>
+									<p>星期一至星期五：09:00 - 21:00<br />
+									電話：123-456-789<br />
+									Email: contact@puffs.com</p>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+									</ul>
+								</section>
+							<!-- Posts -->
+					
+								
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
